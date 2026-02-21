@@ -1,0 +1,121 @@
+I wanna build a portfolio website for my company named "DINK CENTRAL", this company organises events and tournaments and also coaches at some institutions.
+the layout for the webpage is very simple
+#header
+the header contains sections of the webpage and a logo attached as file named "dink_central_logo.jpeg".
+#TOURNAMENTS
+the tournament section has the ui as shown in the reference image attached as "tournaments.png", it has all the tournaments listed  with their image along with the tournament name and its detail in this format
+{
+-image file name(currently add this default image file names "default.jpg" ill change later, add option to add multiple images and to slide them)
+-heading
+-date and place of event
+-description of event 
+}
+
+the list of tournaments are as follows:
+{
+
+-7th MP State Pickleball Tournament
+
+-August 11–13, 2023 | The Emerald Heights International School, Indore
+
+-A state-level championship organized by the MP Pickleball Association featuring competitive brackets for various age groups.
+}
+
+{
+
+-Apratim 2023
+
+-November 3–5, 2023 | Indore Institute of Science and Technology (IIST)
+
+-An inter-school sports and cultural fest that featured pickleball as a major competitive sports league event for students.
+}
+
+{
+
+-8th MP State Pickleball Tournament
+
+-August 2024 | Indore, Madhya Pradesh
+
+-The annual state-sanctioned tournament used to identify and rank the top pickleball talent across Madhya Pradesh.
+}
+
+{
+
+-Apratim 2024
+
+-October 22–24, 2024 | Indore Institute of Science and Technology (IIST)
+
+-The 5th edition of Central India’s largest inter-school fest, incorporating a high-energy pickleball tournament for 11th and 12th-grade students.
+}
+
+{
+
+-Pickle Paradise Tournament
+
+-November 28–29, 2025 | Pickle Paradise & Cafe, Treasure Town Road, Indore
+
+-A high-stakes open tournament featuring a ₹1 lakh prize pool, held at one of Indore's dedicated pickleball and cafe venues.
+}
+
+{
+
+-Apratim 2025
+
+-November 3–5, 2025 | Indore Institute of Science and Technology (IIST)
+
+-Part of the "Apratim-Pragya Pratispardha," focusing on boys' and girls' singles categories with a significant cash prize pool for winners.
+}
+
+{
+
+-7th RYP National Ranking Tournament
+
+-December 19–21, 2025 | Golden International School, Rau, Indore
+
+-A premier AIPA-sanctioned national ranking event that brings together top-tier players from across India to compete for national points.
+}
+
+{
+
+-NMIMS Intercollege Pickleball Tournament
+
+-Scheduled during the Academic Session (Indore Campus) | NMIMS, Indore
+
+-A collegiate-focused tournament designed to encourage the growth of pickleball among university students and local academic institutions.
+}
+
+{
+
+-Pickleball Mega Open Tournament
+
+-February (Annual Cycle) | Catalyst World School, Indore
+
+-An open community tournament aimed at grassroots development, welcoming both amateur and experienced players in the region.
+}
+
+{
+
+-Moonstone Open Pickleball Tournament
+
+-February 10–12, 2026 | Medi-Caps University, Indore
+
+-A featured sports challenge within the "Moonstone" annual fest, often referred to as "The Champions League" for university athletes.
+}
+
+
+#COACHING AT
+this sections contains a three coulumn grid, every grid has a div as shown in the image attached as "coach.png", which contains the following details
+-logo of the institution
+- name of the institution
+- the name of sport which is being coached
+ill share the details in this format {(file name of logo of the institution),(name of the institution),(the name of sport which is being coached)}
+
+Here are the details:
+{(golden.png),(Golden International School),(pickleball)}
+{(rrcat.png),(Raja Ramanna Centre for Advanced Technology),(pickleball)}
+
+#footer
+create a footer for caontact and all
+here are the details-
+Instagram,
+https://www.instagram.com/dink_.central?igsh=MWxhOWJyNDZuanB4eA==
