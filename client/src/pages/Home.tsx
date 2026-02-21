@@ -21,13 +21,13 @@ const imageMap: Record<string, string> = {
 // Hero Component
 function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-slate-900">
+    <section id="home" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-slate-900">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/40 to-slate-900/90 z-10" />
         <img 
-          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop" 
-          alt="Sports Action" 
+          src={defaultImg} 
+          alt="Dink Central Background" 
           className="w-full h-full object-cover opacity-60"
         />
       </div>
@@ -43,22 +43,10 @@ function Hero() {
             <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent border border-accent/30 font-bold text-sm tracking-wide mb-6 backdrop-blur-sm">
               PREMIER SPORTS COACHING
             </span>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-extrabold text-white mb-8 tracking-tight leading-tight">
-              ELEVATE <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">YOUR GAME</span>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-extrabold text-white mb-8 tracking-tight leading-tight uppercase">
+              Your Game <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">Our Grid</span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-200 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Professional coaching, world-class tournaments, and a community dedicated to sports excellence.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/tournaments" className="w-full sm:w-auto px-8 py-4 bg-primary text-white rounded-xl font-bold text-lg hover:bg-primary/90 hover:-translate-y-1 transition-all shadow-lg shadow-primary/30 flex items-center justify-center gap-2">
-                Join a Tournament <ArrowRight className="w-5 h-5" />
-              </Link>
-              <Link href="/coaching" className="w-full sm:w-auto px-8 py-4 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-xl font-bold text-lg hover:bg-white/20 hover:-translate-y-1 transition-all flex items-center justify-center">
-                Find a Coach
-              </Link>
-            </div>
           </motion.div>
         </div>
       </div>
@@ -89,12 +77,12 @@ function TournamentSection() {
   const { data: tournaments, isLoading } = useTournaments();
 
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
+    <section id="tournaments" className="py-24 bg-background relative overflow-hidden">
       <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-50/50 -skew-x-12 translate-x-1/4 -z-10" />
       
       <div className="container mx-auto px-4 md:px-6">
         <SectionHeader 
-          title="Upcoming Tournaments" 
+          title="Conducted Tournaments" 
           subtitle="Compete & Win" 
           alignment="left"
         />
@@ -126,7 +114,7 @@ function TournamentSection() {
                       className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute top-4 left-4 z-20 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg shadow-sm">
-                      <span className="font-bold text-primary text-sm tracking-wide uppercase">Registration Open</span>
+                      <span className="font-bold text-primary text-sm tracking-wide uppercase">Completed</span>
                     </div>
                   </div>
 
@@ -141,15 +129,9 @@ function TournamentSection() {
                         {tournament.dateLocation}
                       </span>
                     </div>
-                    <p className="text-slate-600 leading-relaxed mb-8">
+                    <p className="text-slate-600 leading-relaxed mb-4">
                       {tournament.description}
                     </p>
-                    <div>
-                      <button className="px-6 py-3 rounded-xl font-bold bg-slate-900 text-white hover:bg-primary transition-colors flex items-center gap-2 group/btn">
-                        Register Now
-                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                      </button>
-                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -174,7 +156,7 @@ function CoachingSection() {
   const { data: locations, isLoading } = useCoachingLocations();
 
   return (
-    <section className="py-24 bg-slate-900 text-white relative">
+    <section id="coaching" className="py-24 bg-slate-900 text-white relative">
       {/* Texture overlay */}
       <div 
         className="absolute inset-0 opacity-10" 
@@ -185,7 +167,7 @@ function CoachingSection() {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <SectionHeader 
-          title="Training Centers" 
+          title="We Are Coaching" 
           subtitle="Where Champions are Made" 
           light={true}
         />
@@ -215,16 +197,16 @@ function CoachingSection() {
                   />
                 </div>
                 
-                <h3 className="text-xl font-bold font-display mb-2">{location.name}</h3>
+                <h3 className="text-xl font-bold font-display mb-2 text-white">{location.name}</h3>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/20 text-accent text-sm font-bold border border-accent/20">
                   <Star className="w-3 h-3 fill-current" />
                   {location.sport}
                 </div>
                 
                 <div className="mt-8 pt-8 border-t border-white/10 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                  <button className="text-sm font-bold text-white hover:text-accent flex items-center justify-center gap-2 w-full">
-                    View Programs <ArrowRight className="w-4 h-4" />
-                  </button>
+                  <a href="#contact" className="text-sm font-bold text-white hover:text-accent flex items-center justify-center gap-2 w-full">
+                    Enquire Now <ArrowRight className="w-4 h-4" />
+                  </a>
                 </div>
               </motion.div>
             ))}
@@ -238,28 +220,24 @@ function CoachingSection() {
 // CTA Section
 function CTASection() {
   return (
-    <section className="py-24 bg-primary relative overflow-hidden">
+    <section id="contact" className="py-24 bg-primary relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600" />
       <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
-        <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
+        <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 uppercase">
           Ready to Start Your Journey?
         </h2>
         <p className="text-blue-100 text-xl max-w-2xl mx-auto mb-10">
-          Whether you're looking to compete at the highest level or just getting started, Dink Central has a place for you.
+          Whether you have to organise a tournament or find a coach for you, Dink Central has got you covered.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link 
-            href="/contact" 
+          <a 
+            href="https://www.instagram.com/dink_.central?igsh=MWxhOWJyNDZuanB4eA==" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-8 py-4 bg-white text-primary rounded-xl font-bold text-lg hover:bg-slate-50 shadow-lg shadow-black/10 transition-all hover:scale-105"
           >
-            Contact Us Today
-          </Link>
-          <Link 
-            href="/about" 
-            className="px-8 py-4 bg-blue-700/50 text-white rounded-xl font-bold text-lg hover:bg-blue-700 transition-all border border-blue-400/30"
-          >
-            Learn More
-          </Link>
+            Contact Us on Instagram
+          </a>
         </div>
       </div>
     </section>

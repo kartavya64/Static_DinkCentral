@@ -18,11 +18,22 @@ export function Navigation() {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "Tournaments", href: "/tournaments" },
-    { name: "Coaching", href: "/coaching" },
-    { name: "About", href: "/about" },
+    { name: "Home", href: "#home" },
+    { name: "Tournaments", href: "#tournaments" },
+    { name: "Coaching", href: "#coaching" },
+    { name: "Contact", href: "#contact" },
   ];
+
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const element = document.getElementById(href.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+      setIsOpen(false);
+    }
+  };
 
   return (
     <nav
@@ -34,7 +45,7 @@ export function Navigation() {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group">
+          <a href="#home" onClick={(e) => handleScroll(e, "#home")} className="flex items-center gap-3 group">
             <div className="relative overflow-hidden rounded-full border-2 border-white/20 shadow-sm group-hover:shadow-md transition-all duration-300">
               <img 
                 src={dinkLogo} 
@@ -45,35 +56,35 @@ export function Navigation() {
             <span className={`text-xl md:text-2xl font-display font-bold tracking-tight ${scrolled ? 'text-foreground' : 'text-white'} transition-colors`}>
               Dink Central
             </span>
-          </Link>
+          </a>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-medium transition-all hover:-translate-y-0.5 ${
-                  location === link.href
-                    ? "text-accent font-bold"
-                    : scrolled
+                onClick={(e) => handleScroll(e, link.href)}
+                className={`text-sm font-medium transition-all hover:-translate-y-0.5 cursor-pointer ${
+                  scrolled
                     ? "text-muted-foreground hover:text-primary"
                     : "text-white/80 hover:text-white"
                 }`}
               >
                 {link.name}
-              </Link>
+              </a>
             ))}
-            <Link
-              href="/contact"
-              className={`px-5 py-2.5 rounded-full font-semibold text-sm transition-all hover:scale-105 active:scale-95 shadow-lg ${
+            <a
+              href="#contact"
+              onClick={(e) => handleScroll(e, "#contact")}
+              className={`px-5 py-2.5 rounded-full font-semibold text-sm transition-all hover:scale-105 active:scale-95 shadow-lg cursor-pointer ${
                 scrolled
                   ? "bg-primary text-primary-foreground hover:bg-primary/90 shadow-primary/20"
                   : "bg-white text-primary hover:bg-white/90 shadow-black/10"
               }`}
             >
               Get Started
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -98,26 +109,15 @@ export function Navigation() {
           >
             <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
-                <Link
+                <a
                   key={link.name}
                   href={link.href}
-                  className={`text-lg font-medium p-2 rounded-lg transition-colors ${
-                    location === link.href
-                      ? "bg-primary/10 text-primary"
-                      : "text-foreground/80 hover:bg-muted"
-                  }`}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => handleScroll(e, link.href)}
+                  className="text-lg font-medium p-2 rounded-lg transition-colors text-foreground/80 hover:bg-muted cursor-pointer"
                 >
                   {link.name}
-                </Link>
+                </a>
               ))}
-              <Link
-                href="/contact"
-                className="mt-2 w-full text-center py-3 bg-primary text-white rounded-xl font-bold shadow-lg shadow-primary/20"
-                onClick={() => setIsOpen(false)}
-              >
-                Get Started
-              </Link>
             </div>
           </motion.div>
         )}

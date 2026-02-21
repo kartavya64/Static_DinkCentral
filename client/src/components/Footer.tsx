@@ -16,7 +16,7 @@ export function Footer() {
               <span className="text-xl font-display font-bold text-white">Dink Central</span>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed">
-              Elevating your game through premier coaching, tournaments, and community events. Join the revolution in sports excellence.
+              Your Game, Our Grid. Premier coaching, tournaments, and community events.
             </p>
             <div className="flex gap-4 pt-2">
               <a 
@@ -34,11 +34,10 @@ export function Footer() {
           <div>
             <h3 className="text-white font-bold mb-4 font-display">Quick Links</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/" className="hover:text-accent transition-colors">Home</Link></li>
-              <li><Link href="/tournaments" className="hover:text-accent transition-colors">Tournaments</Link></li>
-              <li><Link href="/coaching" className="hover:text-accent transition-colors">Coaching</Link></li>
-              <li><Link href="/about" className="hover:text-accent transition-colors">About Us</Link></li>
-              <li><Link href="/contact" className="hover:text-accent transition-colors">Contact</Link></li>
+              <li><a href="#home" className="hover:text-accent transition-colors cursor-pointer">Home</a></li>
+              <li><a href="#tournaments" className="hover:text-accent transition-colors cursor-pointer">Tournaments</a></li>
+              <li><a href="#coaching" className="hover:text-accent transition-colors cursor-pointer">Coaching</a></li>
+              <li><a href="#contact" className="hover:text-accent transition-colors cursor-pointer">Contact</a></li>
             </ul>
           </div>
 
