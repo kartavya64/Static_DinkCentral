@@ -5,13 +5,6 @@ import { useTournaments } from "@/hooks/use-tournaments";
 import { motion } from "framer-motion";
 import { Calendar, MapPin, ArrowRight } from "lucide-react";
 
-// Asset imports
-import defaultImg from "@assets/default_1771658535869.jpg";
-const imageMap: Record<string, string> = {
-  // Add mappings if specific images are used in future
-  "default": defaultImg
-};
-
 export default function Tournaments() {
   const { data: tournaments, isLoading } = useTournaments();
 
@@ -56,7 +49,7 @@ export default function Tournaments() {
                 <div className="flex flex-col md:flex-row">
                   <div className="md:w-1/3 relative h-48 md:h-auto overflow-hidden">
                     <img 
-                      src={imageMap[tournament.imageUrl] || defaultImg} 
+                      src={tournament.imageUrl} 
                       alt={tournament.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />

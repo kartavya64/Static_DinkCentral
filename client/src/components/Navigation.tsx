@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import dinkLogo from "@assets/dink_central_logo_1771658535870.jpeg";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,7 +47,7 @@ export function Navigation() {
           <a href="#home" onClick={(e) => handleScroll(e, "#home")} className="flex items-center gap-3 group">
             <div className="relative overflow-hidden rounded-full border-2 border-white/20 shadow-sm group-hover:shadow-md transition-all duration-300">
               <img 
-                src={dinkLogo} 
+                src="/dink-central-logo.jpeg" 
                 alt="Dink Central Logo" 
                 className="h-10 w-10 md:h-12 md:w-12 object-cover" 
               />

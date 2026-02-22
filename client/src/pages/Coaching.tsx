@@ -4,17 +4,6 @@ import { useCoachingLocations } from "@/hooks/use-coaching-locations";
 import { motion } from "framer-motion";
 import { MapPin, Star, Award, CheckCircle } from "lucide-react";
 
-// Asset imports
-import defaultImg from "@assets/default_1771658535869.jpg";
-import goldenLogo from "@assets/golden_1771658535870.png";
-import rrcatLogo from "@assets/rrcat_1771658535870.png";
-
-const imageMap: Record<string, string> = {
-  "@assets/default_1771658535869.jpg": defaultImg,
-  "@assets/golden_1771658535870.png": goldenLogo,
-  "@assets/rrcat_1771658535870.png": rrcatLogo,
-};
-
 export default function Coaching() {
   const { data: locations, isLoading } = useCoachingLocations();
 
@@ -98,7 +87,7 @@ export default function Coaching() {
               >
                 <div className="w-40 h-40 rounded-full p-4 bg-slate-50 mb-6 group-hover:scale-110 transition-transform duration-500 shadow-inner">
                   <img 
-                    src={imageMap[location.logoUrl] || defaultImg} 
+                    src={location.logoUrl} 
                     alt={location.name}
                     className="w-full h-full object-contain"
                   />

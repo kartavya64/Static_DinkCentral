@@ -1,6 +1,5 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import coachImg from "@assets/coach_1771658920259.png";
 import { motion } from "framer-motion";
 
 export default function About() {
@@ -28,7 +27,7 @@ export default function About() {
           >
             <div className="absolute inset-0 bg-primary/10 rounded-3xl -rotate-3" />
             <img 
-              src={coachImg} 
+              src="/coach_1771658920259.png" 
               alt="Coaching Team" 
               className="relative rounded-3xl shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500 w-full"
             />

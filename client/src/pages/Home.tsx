@@ -7,17 +7,6 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { useTournaments } from "@/hooks/use-tournaments";
 import { useCoachingLocations } from "@/hooks/use-coaching-locations";
 
-// Asset imports
-import defaultImg from "@assets/default_1771658535869.jpg";
-import goldenLogo from "@assets/golden_1771658535870.png";
-import rrcatLogo from "@assets/rrcat_1771658535870.png";
-
-const imageMap: Record<string, string> = {
-  "@assets/default_1771658535869.jpg": defaultImg,
-  "@assets/golden_1771658535870.png": goldenLogo,
-  "@assets/rrcat_1771658535870.png": rrcatLogo,
-};
-
 // Hero Component
 function Hero() {
   return (
@@ -26,7 +15,7 @@ function Hero() {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/40 to-slate-900/90 z-10" />
         <img 
-          src={defaultImg} 
+          src="/tournament-default.jpg" 
           alt="Dink Central Background" 
           className="w-full h-full object-cover opacity-60"
         />
@@ -109,7 +98,7 @@ function TournamentSection() {
                   <div className="md:w-2/5 relative overflow-hidden h-64 md:h-auto">
                     <div className="absolute inset-0 bg-primary/10 mix-blend-multiply z-10 group-hover:bg-transparent transition-all duration-500" />
                     <img 
-                      src={imageMap[tournament.imageUrl] || defaultImg} 
+                      src={tournament.imageUrl} 
                       alt={tournament.title}
                       className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                     />
@@ -191,7 +180,7 @@ function CoachingSection() {
               >
                 <div className="w-32 h-32 mx-auto bg-white rounded-full p-2 mb-6 shadow-xl shadow-black/20 group-hover:shadow-accent/20 transition-all overflow-hidden flex items-center justify-center">
                   <img 
-                    src={imageMap[location.logoUrl] || defaultImg} 
+                    src={location.logoUrl} 
                     alt={location.name}
                     className="w-full h-full object-contain"
                   />

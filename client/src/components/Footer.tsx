@@ -1,6 +1,5 @@
 import { Link } from "wouter";
 import { Instagram, Mail, Phone, MapPin } from "lucide-react";
-import dinkLogo from "@assets/dink_central_logo_1771658535870.jpeg";
 
 export function Footer() {
   return (
@@ -11,7 +10,7 @@ export function Footer() {
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-3">
               <div className="h-10 w-10 rounded-full overflow-hidden bg-white/10 p-0.5">
-                 <img src={dinkLogo} alt="Dink Central" className="h-full w-full object-cover rounded-full" />
+                 <img src="/dink-central-logo.jpeg" alt="Dink Central" className="h-full w-full object-cover rounded-full" />
               </div>
               <span className="text-xl font-display font-bold text-white">Dink Central</span>
             </Link>
