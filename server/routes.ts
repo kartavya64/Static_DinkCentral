@@ -79,12 +79,12 @@ async function seedDatabase() {
     const locations = [
       {
         name: "Golden International School",
-        sport: "pickleball",
+        sport: "Pickleball",
         logoUrl: "@assets/golden_1771658535870.png"
       },
       {
         name: "Raja Ramanna Centre for Advanced Technology",
-        sport: "pickleball",
+        sport: "Pickleball",
         logoUrl: "@assets/rrcat_1771658535870.png"
       }
     ];
